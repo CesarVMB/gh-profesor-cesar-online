@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import PostsList from '../../../components/PostsList.astro';
+
+const { categoria } = Astro.params;
+const posts = (await getCollection('publicaciones'))
+.filter(p => p.data.category === categoria);
+---
+<PostsList posts={posts} />
