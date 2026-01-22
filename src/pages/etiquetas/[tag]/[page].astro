@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection('publicaciones');
   const tags = [...new Set(posts.flatMap(p => p.data.tags ?? []))];
+
   return tags.flatMap(tag =>
     paginate(posts.filter(p => p.data.tags?.includes(tag)), {
       params: { tag },
@@ -16,6 +17,7 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 ---
+
 <BaseLayout title={`Etiqueta: ${page.params.tag}`}>
   <h1 class="mb-4">Etiqueta: {page.params.tag}</h1>
   <PostsList page={page} />

@@ -5,9 +5,11 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection('publicaciones');
-  return ['matematicas','fisica','quimica'].flatMap(cat =>
-    paginate(posts.filter(p => p.data.category === cat), {
-      params: { categoria: cat },
+  const categorias = ['matematicas', 'fisica', 'quimica'];
+
+  return categorias.flatMap(categoria =>
+    paginate(posts.filter(p => p.data.category === categoria), {
+      params: { categoria },
       pageSize: 6,
     })
   );
@@ -15,6 +17,7 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 ---
+
 <BaseLayout title={page.params.categoria}>
   <h1 class="mb-4 text-capitalize">{page.params.categoria}</h1>
   <PostsList page={page} />

@@ -1,13 +1,18 @@
 ---
 import PostCard from './PostCard.astro';
-const { posts } = Astro.props;
+import Pagination from './Pagination.astro';
+
+const { page, posts } = Astro.props;
+const items = page?.data ?? posts ?? [];
 ---
+
 <div class="row g-4">
-  {posts.map(post => (
-  <div class="col-md-4">
-    <PostCard post={post} />
-  </div>
+  {items.map(post => (
+    <div class="col-md-4">
+      <PostCard post={post} />
+    </div>
   ))}
 </div>
 
-<Pagination page={page} />
+{page && <Pagination page={page} />}
+
