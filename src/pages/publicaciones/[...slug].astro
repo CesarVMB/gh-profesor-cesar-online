@@ -1,0 +1,14 @@
+---
+import { getEntryBySlug } from 'astro:content';
+import YouTubeVideo from '../../components/YouTubeVideo.astro';
+
+const { slug } = Astro.params;
+const post = await getEntryBySlug('publicaciones', slug);
+---
+<article>
+  <h1>{post.data.title}</h1>
+  {post.data.youtube && <YouTubeVideo url={post.data.youtube} />}
+  <img src={post.data.image ?? '/default.png'} class="img-fluid my-3" />
+  <div set:html={post.body} />
+</article>
+
