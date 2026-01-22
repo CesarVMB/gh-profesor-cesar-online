@@ -1,0 +1,7 @@
+[
+  { "label": "Inicio", "url": "/" },
+  { "label": "Matemáticas", "url": "/categoria/matematicas" },
+  { "label": "Física", "url": "/categoria/fisica" },
+  { "label": "Química", "url": "/categoria/quimica" },
+  { "label": "Contacto", "url": "/contacto" }
+]
