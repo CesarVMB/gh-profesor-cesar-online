@@ -1,17 +1,52 @@
 ---
-const { items = [] } = Astro.props;
+import menu from '../data/mainmenu.json';
+
+const {
+  extraItems = [],
+  categorySlug = null, // 👈 NUEVO
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+
+// Inicio
+const breadcrumbs = [];
+const home = menu.find(item => item.url === '/');
+if (home) breadcrumbs.push(home);
+
+// 1️⃣ Categoría explícita (para posts)
+if (categorySlug) {
+  const categoryItem = menu.find(item =>
+    item.url.startsWith(`/categoria/${categorySlug}`)
+  );
+
+  if (categoryItem) {
+    breadcrumbs.push(categoryItem);
+  }
+} else {
+  // 2️⃣ Coincidencia automática (contacto, servicios, categorías)
+  const matched = menu.find(
+    item =>
+      item.url !== '/' &&
+      pathname.startsWith(item.url.replace(/\/\d+$/, ''))
+  );
+
+  if (matched) breadcrumbs.push(matched);
+}
+
+// 3️⃣ Items dinámicos finales (post, tag, etc.)
+breadcrumbs.push(...extraItems);
 ---
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    {items.map((item, index) => (
+    {breadcrumbs.map((item, index) => (
       <li
         class={`breadcrumb-item ${
-          index === items.length - 1 ? 'active' : ''
+          index === breadcrumbs.length - 1 ? 'active' : ''
         }`}
-        aria-current={index === items.length - 1 ? 'page' : undefined}
+        aria-current={index === breadcrumbs.length - 1 ? 'page' : undefined}
       >
-        {item.url && index !== items.length - 1 ? (
+        {item.url && index !== breadcrumbs.length - 1 ? (
           <a href={item.url}>{item.label}</a>
         ) : (
           item.label

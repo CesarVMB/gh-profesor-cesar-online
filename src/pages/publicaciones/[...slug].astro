@@ -24,12 +24,8 @@ const { Content } = await post.render();
 
   <!-- ✅ Breadcrumbs SIN variables intermedias -->
   <Breadcrumbs
-    items={[
-      { label: 'Inicio', url: '/' },
-      {
-        label: categories[post.data.category],
-        url: `/categoria/${post.data.category}/1`,
-      },
+    categorySlug={post.data.category}
+    extraItems={[
       { label: post.data.title },
     ]}
   />
