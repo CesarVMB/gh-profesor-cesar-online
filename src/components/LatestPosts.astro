@@ -4,7 +4,7 @@ import PostsList from './PostsList.astro';
 
 const posts = (await getCollection('publicaciones'))
   .sort((a, b) => b.data.pubDate - a.data.pubDate)
-  .slice(0, 6);
+  .slice(0, 3);
 ---
 
 <PostsList posts={posts} />
