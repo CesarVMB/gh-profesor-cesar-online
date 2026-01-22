@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import YouTubeVideo from '../../components/YouTubeVideo.astro';
 import { getCollection } from 'astro:content';
+import { categories } from '../../data/categories';
 
 export async function getStaticPaths() {
   const posts = await getCollection('publicaciones');
@@ -14,11 +16,24 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 
-// ✅ ESTA ES LA CLAVE
+// render markdown correctamente (ASTRO OFICIAL)
 const { Content } = await post.render();
 ---
 
 <BaseLayout title={post.data.title}>
+
+  <!-- ✅ Breadcrumbs SIN variables intermedias -->
+  <Breadcrumbs
+    items={[
+      { label: 'Inicio', url: '/' },
+      {
+        label: categories[post.data.category],
+        url: `/categoria/${post.data.category}/1`,
+      },
+      { label: post.data.title },
+    ]}
+  />
+
   <article class="container py-4" style="max-width: 800px">
 
     <h1 class="mb-3">{post.data.title}</h1>
@@ -36,11 +51,11 @@ const { Content } = await post.render();
       alt={post.data.title}
     />
 
-    <!-- ✅ RENDER SEGURO DEL MARKDOWN -->
     <div class="content">
       <Content />
     </div>
 
   </article>
+
 </BaseLayout>
 

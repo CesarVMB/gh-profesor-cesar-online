@@ -1,0 +1,23 @@
+---
+const { items = [] } = Astro.props;
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    {items.map((item, index) => (
+      <li
+        class={`breadcrumb-item ${
+          index === items.length - 1 ? 'active' : ''
+        }`}
+        aria-current={index === items.length - 1 ? 'page' : undefined}
+      >
+        {item.url && index !== items.length - 1 ? (
+          <a href={item.url}>{item.label}</a>
+        ) : (
+          item.label
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+

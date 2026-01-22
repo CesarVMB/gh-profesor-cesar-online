@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import PostsList from '../../../components/PostsList.astro';
+
 import { getCollection } from 'astro:content';
 import { categories } from '../../../data/categories';
 
@@ -33,6 +35,12 @@ const categoriaTitulo = categories[categoria];
 ---
 
 <BaseLayout title={categoriaTitulo}>
+  <Breadcrumbs 
+    items={[
+      { label: 'Inicio', url: '/' },
+      { label: categoriaTitulo },
+    ]}
+  />
   <h1 class="mb-4">{categoriaTitulo}</h1>
   <PostsList page={page} />
 </BaseLayout>

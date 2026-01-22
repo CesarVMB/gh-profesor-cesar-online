@@ -1,0 +1,55 @@
+---
+import { categories } from '../data/categories';
+
+const { postTitle, postCategory } = Astro.props;
+const pathname = Astro.url.pathname;
+
+// helpers
+const isContacto = pathname.startsWith('/contacto');
+const isCategoria = pathname.startsWith('/categoria');
+const isPost = pathname.startsWith('/publicaciones');
+
+const categoriaTitulo = postCategory
+  ? categories[postCategory]
+  : null;
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <!-- Inicio -->
+    <li class="breadcrumb-item">
+      <a href="/">Inicio</a>
+    </li>
+
+    <!-- Contacto -->
+    {isContacto && (
+      <li class="breadcrumb-item active" aria-current="page">
+        Contacto
+      </li>
+    )}
+
+    <!-- Categoría -->
+    {isCategoria && categoriaTitulo && !isPost && (
+      <li class="breadcrumb-item active" aria-current="page">
+        {categoriaTitulo}
+      </li>
+    )}
+
+    <!-- Post -->
+    {isPost && categoriaTitulo && postTitle && (
+      <>
+        <li class="breadcrumb-item">
+          <a href={`/categoria/${postCategory}/1`}>
+            {categoriaTitulo}
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          {postTitle}
+        </li>
+      </>
+    )}
+
+  </ol>
+</nav>
+
