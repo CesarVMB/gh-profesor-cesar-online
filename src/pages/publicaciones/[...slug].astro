@@ -1,14 +1,46 @@
 ---
-import { getEntryBySlug } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import YouTubeVideo from '../../components/YouTubeVideo.astro';
+import { getCollection } from 'astro:content';
 
-const { slug } = Astro.params;
-const post = await getEntryBySlug('publicaciones', slug);
+export async function getStaticPaths() {
+  const posts = await getCollection('publicaciones');
+
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+// ✅ ESTA ES LA CLAVE
+const { Content } = await post.render();
 ---
-<article>
-  <h1>{post.data.title}</h1>
-  {post.data.youtube && <YouTubeVideo url={post.data.youtube} />}
-  <img src={post.data.image ?? '/default.png'} class="img-fluid my-3" />
-  <div set:html={post.body} />
-</article>
+
+<BaseLayout title={post.data.title}>
+  <article class="container py-4" style="max-width: 800px">
+
+    <h1 class="mb-3">{post.data.title}</h1>
+    <p class="text-muted">{post.data.description}</p>
+
+    {post.data.youtube && (
+      <div class="mb-4">
+        <YouTubeVideo url={post.data.youtube} />
+      </div>
+    )}
+
+    <img
+      src={post.data.image ?? '/default.png'}
+      class="img-fluid rounded mb-4"
+      alt={post.data.title}
+    />
+
+    <!-- ✅ RENDER SEGURO DEL MARKDOWN -->
+    <div class="content">
+      <Content />
+    </div>
+
+  </article>
+</BaseLayout>
 

@@ -1,25 +1,35 @@
 ---
 const { page } = Astro.props;
+
+// Generar array de páginas [1, 2, 3, ...]
+const pages = Array.from(
+  { length: page.lastPage },
+  (_, i) => i + 1
+);
 ---
 <nav aria-label="Paginación">
   <ul class="pagination justify-content-center mt-5">
+
     {page.url.prev && (
-    <li class="page-item">
-      <a class="page-link" href={page.url.prev}>Anterior</a>
-    </li>
+      <li class="page-item">
+        <a class="page-link" href={page.url.prev}>Anterior</a>
+      </li>
     )}
 
-    {page.pages.map(p => (
-    <li class={`page-item ${p.current ? 'active' : ''}`}>
-      <a class="page-link" href={p.url}>{p.number}</a>
-    </li>
+    {pages.map(number => (
+      <li class={`page-item ${number === page.currentPage ? 'active' : ''}`}>
+        <a class="page-link" href={number === 1 ? './1' : `./${number}`}>
+          {number}
+        </a>
+      </li>
     ))}
 
     {page.url.next && (
-    <li class="page-item">
-      <a class="page-link" href={page.url.next}>Siguiente</a>
-    </li>
+      <li class="page-item">
+        <a class="page-link" href={page.url.next}>Siguiente</a>
+      </li>
     )}
+
   </ul>
 </nav>
 

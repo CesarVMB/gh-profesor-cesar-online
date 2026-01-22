@@ -2,24 +2,38 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostsList from '../../../components/PostsList.astro';
 import { getCollection } from 'astro:content';
+import { categories } from '../../../data/categories';
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection('publicaciones');
-  const categorias = ['matematicas', 'fisica', 'quimica'];
+  const categorias = Object.keys(categories);
 
   return categorias.flatMap(categoria =>
-    paginate(posts.filter(p => p.data.category === categoria), {
-      params: { categoria },
-      pageSize: 6,
-    })
+    paginate(
+      posts
+        .filter(p => p.data.category === categoria)
+        .sort(
+          (a, b) =>
+            new Date(b.data.date).getTime() -
+            new Date(a.data.date).getTime()
+        ),
+      {
+        params: { categoria },
+        pageSize: 3,
+      }
+    )
   );
 }
 
+// ✅ LOS PARAMS VIENEN DE AQUÍ
+const { categoria } = Astro.params;
 const { page } = Astro.props;
+
+const categoriaTitulo = categories[categoria];
 ---
 
-<BaseLayout title={page.params.categoria}>
-  <h1 class="mb-4 text-capitalize">{page.params.categoria}</h1>
+<BaseLayout title={categoriaTitulo}>
+  <h1 class="mb-4">{categoriaTitulo}</h1>
   <PostsList page={page} />
 </BaseLayout>
 
