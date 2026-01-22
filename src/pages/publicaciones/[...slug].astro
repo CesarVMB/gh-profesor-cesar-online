@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import YouTubeVideo from '../../components/YouTubeVideo.astro';
+
 import { getCollection } from 'astro:content';
 import { categories } from '../../data/categories';
 
@@ -15,6 +16,17 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+
+// helpers
+const hasYoutube =
+  post.data.youtube && post.data.youtube.trim() !== '';
+
+const hasImage =
+  post.data.image && post.data.image.trim() !== '';
+
+const imageSrc = hasImage
+  ? post.data.image
+  : '/images/default.png';
 
 // render markdown correctamente (ASTRO OFICIAL)
 const { Content } = await post.render();
@@ -34,19 +46,31 @@ const { Content } = await post.render();
 
     <h1 class="mb-3">{post.data.title}</h1>
     <p class="text-muted">{post.data.description}</p>
+    <p class="text-muted mb-4">
+      {post.data.pubDate.toLocaleDateString('es-ES', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })}
+    </p>
 
-    {post.data.youtube && (
+    {/* 🎬 VIDEO */}
+    {hasYoutube && (
       <div class="mb-4">
-        <YouTubeVideo url={post.data.youtube} />
+        <YouTubeVideo id={post.data.youtube} />
       </div>
     )}
 
-    <img
-      src={post.data.image ?? '/default.png'}
-      class="img-fluid rounded mb-4"
-      alt={post.data.title}
-    />
+    {/* 🖼️ IMAGEN (solo si NO hay video) */}
+    {!hasYoutube && (
+      <img
+        src={imageSrc}
+        class="img-fluid rounded mb-4"
+        alt={post.data.title}
+      />
+    )}
 
+    {/* 📄 CONTENIDO */}
     <div class="content">
       <Content />
     </div>
