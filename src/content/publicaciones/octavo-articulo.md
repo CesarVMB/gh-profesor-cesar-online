@@ -5,7 +5,6 @@ pubDate: 2026-01-08
 category: fisica
 tags: [dinamica, secundaria]
 youtube: https://www.youtube.com/watch?v=BWIPZvwcnX8
-image: ""
 ---
 
 Contenido del octavo post en **Markdown**.

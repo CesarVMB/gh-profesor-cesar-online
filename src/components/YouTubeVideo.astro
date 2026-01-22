@@ -1,32 +1,8 @@
 ---
-const { id, url } = Astro.props;
+import { getYouTubeId } from '../utils/youtube';
 
-/**
- * Extrae el ID desde:
- * - ID directo
- * - https://www.youtube.com/watch?v=XXXX
- * - https://youtu.be/XXXX
- */
-function getYouTubeId(value) {
-  if (!value || typeof value !== 'string') return null;
-
-  // ID directo
-  if (!value.includes('http')) return value;
-
-  // URL larga
-  if (value.includes('watch?v=')) {
-    return value.split('watch?v=')[1].split('&')[0];
-  }
-
-  // URL corta
-  if (value.includes('youtu.be/')) {
-    return value.split('youtu.be/')[1].split('?')[0];
-  }
-
-  return null;
-}
-
-const videoId = getYouTubeId(id ?? url);
+const { id } = Astro.props;
+const videoId = getYouTubeId(id);
 ---
 
 {videoId && (
@@ -34,6 +10,7 @@ const videoId = getYouTubeId(id ?? url);
     <iframe
       src={`https://www.youtube.com/embed/${videoId}`}
       title="YouTube video"
+      loading="lazy"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     ></iframe>

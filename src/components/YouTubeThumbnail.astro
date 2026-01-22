@@ -1,5 +1,16 @@
 ---
-const { url } = Astro.props;
-const id = url?.split('v=')[1];
+import { getYouTubeId } from '../utils/youtube';
+
+const { youtube, alt } = Astro.props;
+const videoId = getYouTubeId(youtube);
 ---
-<img class="card-img-top" src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`} alt="YouTube thumbnail" />
+
+{videoId && (
+  <img
+    src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+    class="card-img-top"
+    alt={alt}
+    loading="lazy"
+  />
+)}
+
