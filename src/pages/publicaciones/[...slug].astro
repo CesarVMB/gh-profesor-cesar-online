@@ -2,10 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import YouTubeVideo from '../../components/YouTubeVideo.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
 
 import { getCollection } from 'astro:content';
 import { getPostImage } from '../../utils/getPostImage';
 import { getYouTubeId } from '../../utils/youtube';
+import { getRelatedPosts } from '../../utils/getRelatedPosts';
 
 export async function getStaticPaths() {
   const posts = await getCollection('publicaciones');
@@ -23,6 +25,10 @@ const imageSrc = getPostImage(post);
 
 // render markdown correctamente (ASTRO OFICIAL)
 const { Content } = await post.render();
+
+// related posts 
+const allPosts = await getCollection('publicaciones');
+const relatedPosts = getRelatedPosts(allPosts, post);
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
@@ -61,6 +67,8 @@ const { Content } = await post.render();
     <div class="content">
       <Content />
     </div>
+
+    <RelatedPosts posts={relatedPosts} />
 
   </article>
 
