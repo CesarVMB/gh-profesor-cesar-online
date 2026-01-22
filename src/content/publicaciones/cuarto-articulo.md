@@ -1,11 +1,11 @@
 ---
-title: "Tercer artículo"
-description: "Descripción del tercer artículo."
-pubDate: 2026-01-03
+title: "Cuarto artículo"
+description: "Descripción del cuarto artículo."
+pubDate: 2026-01-04
 category: matematicas
 tags: [geometria, secundaria]
 youtube: https://www.youtube.com/watch?v=BWIPZvwcnX8
 image: ""
 ---
 
-Contenido del tercer post en **Markdown**.
+Contenido del cuarto post en **Markdown**.

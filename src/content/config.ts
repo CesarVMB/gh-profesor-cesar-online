@@ -6,7 +6,7 @@ export const collections = {
     schema: z.object({
       title: z.string(),
       description: z.string(),
-      date: z.date(), // ✅ Astro lo convierte a Date
+      pubDate: z.date(), // ✅ Astro lo convierte a Date
       category: z.enum(["matematicas", "fisica", "quimica"]),
       tags: z.array(z.string()).optional(),
       youtube: z.string().optional(),
