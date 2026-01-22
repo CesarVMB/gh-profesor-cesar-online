@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostsList from '../../../components/PostsList.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection('publicaciones');
+  return ['matematicas','fisica','quimica'].flatMap(cat =>
+    paginate(posts.filter(p => p.data.category === cat), {
+      params: { categoria: cat },
+      pageSize: 6,
+    })
+  );
+}
+
+const { page } = Astro.props;
+---
+<BaseLayout title={page.params.categoria}>
+  <h1 class="mb-4 text-capitalize">{page.params.categoria}</h1>
+  <PostsList page={page} />
+</BaseLayout>
+
