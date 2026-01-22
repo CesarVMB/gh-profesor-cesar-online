@@ -1,0 +1,17 @@
+---
+import YouTubeThumbnail from './YouTubeThumbnail.astro';
+const { post } = Astro.props;
+---
+<div class="card h-100">
+  {post.data.youtube ? (
+  <YouTubeThumbnail url={post.data.youtube} />
+  ) : (
+  <img src={post.data.image ?? '/default.png'} class="card-img-top" />
+  )}
+  <div class="card-body">
+    <h5 class="card-title">{post.data.title}</h5>
+    <p class="card-text">{post.data.description}</p>
+    <a href={`/publicaciones/${post.slug}/`} class="btn btn-primary">Leer más</a>
+  </div>
+</div>
+
