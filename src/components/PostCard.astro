@@ -1,12 +1,24 @@
 ---
 import YouTubeThumbnail from './YouTubeThumbnail.astro';
+
 const { post } = Astro.props;
+
+const hasYoutube = post.data.youtube && post.data.youtube.trim() !== '';
+const hasImage = post.data.image && post.data.image.trim() !== '';
+
+let imageSrc = '/images/default.png';
+
+if (hasYoutube) {
+  imageSrc = `https://img.youtube.com/vi/${post.data.youtube}/hqdefault.jpg`;
+} else if (hasImage) {
+  imageSrc = post.data.image;
+}
 ---
 <div class="card h-100">
   {post.data.youtube ? (
   <YouTubeThumbnail url={post.data.youtube} />
   ) : (
-  <img src={post.data.image ?? '/default.png'} class="card-img-top" />
+  <img src={imageSrc} class="card-img-top" alt={post.data.title} />
   )}
   <div class="card-body">
     <h5 class="card-title">{post.data.title}</h5>
