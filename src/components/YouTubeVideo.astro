@@ -1,0 +1,7 @@
+---
+const { url } = Astro.props;
+const id = url.split('v=')[1];
+---
+<div class="ratio ratio-16x9">
+  <iframe src={`https://www.youtube.com/embed/${id}`} allowfullscreen></iframe>
+</div>

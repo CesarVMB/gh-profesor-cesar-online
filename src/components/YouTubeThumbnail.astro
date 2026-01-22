@@ -1,0 +1,5 @@
+---
+const { url } = Astro.props;
+const id = url?.split('v=')[1];
+---
+<img class="card-img-top" src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`} alt="YouTube thumbnail" />
