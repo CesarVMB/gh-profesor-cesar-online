@@ -1,16 +1,18 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LatestPosts from '../components/LatestPosts.astro';
 ---
+<BaseLayout title="Inicio">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <section class="mb-5 text-center">
+    <h1 class="display-5">Matemáticas, Física y Química</h1>
+    <p class="lead">Publicaciones educativas con apoyo de videos y material visual</p>
+  </section>
+
+  <section>
+    <h2 class="mb-4">Últimas publicaciones</h2>
+    <LatestPosts />
+  </section>
+
+</BaseLayout>
+
