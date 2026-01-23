@@ -4,6 +4,7 @@ description: "Descripción del undécimo artículo."
 pubDate: 2026-01-11
 category: matematicas
 tags: [calculo, bachillerato]
+youtube: https://www.youtube.com/watch?v=pYVVPqphPS0
 ---
 
 Contenido del décimo post en **Markdown** y $\LaTeX$.
