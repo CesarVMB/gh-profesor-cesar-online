@@ -1,8 +1,12 @@
 --- 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const pageTitle = 'Clases';
+const pageDescription = 'Esta es la descripción de la página de clases.'
 --- 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <Breadcrumbs />
+  <h1 class="mb-4">{pageTitle}</h1>
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut magnam quidem animi cupiditate quia ipsam voluptas nobis nostrum unde natus molestiae saepe, quo deleniti incidunt, nisi reprehenderit vero? Omnis, possimus.
 </BaseLayout>

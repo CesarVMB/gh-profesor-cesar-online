@@ -32,11 +32,14 @@ const { categoria } = Astro.params;
 const { page } = Astro.props;
 
 const categoriaTitulo = categories[categoria];
+
+const pageTitle = categoriaTitulo;
+const pageDescription = `Esta es la descripción de la página de ${categoriaTitulo}.`
 ---
 
-<BaseLayout title={categoriaTitulo}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <Breadcrumbs />
-  <h1 class="mb-4">{categoriaTitulo}</h1>
+  <h1 class="mb-4">{pageTitle}</h1>
   <PostsList page={page} />
 </BaseLayout>
 

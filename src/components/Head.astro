@@ -9,15 +9,22 @@ const { pageTitle, pageDescription } = Astro.props
 	<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="generator" content={Astro.generator} />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
   <title>{pageTitle} | {siteTitle} | {LOCATION.city} - {LOCATION.country}</title>
   <meta name="description" content={pageDescription ? `${pageDescription}` : `${siteDescription}`} />
+  <!-- OpenGraph -->
   <meta property="og:title" content=`${pageTitle} | ${siteTitle} | ${LOCATION.city} - ${LOCATION.country}` />
   <meta property="og:description" content={pageDescription ? `${pageDescription}` : `${siteDescription}`} />
   <meta property="og:type" content="website" />
+  <!-- Bootstrap styles via CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Global styles -->
   <link rel="stylesheet" href="/css/global.css">
+  <!-- Bootstrap scripts via CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <!-- Global scripts -->
   <script defer src="/js/global.js"></script>
 </head>
 

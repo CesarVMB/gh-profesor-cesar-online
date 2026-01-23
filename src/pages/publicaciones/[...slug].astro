@@ -29,9 +29,12 @@ const { Content } = await post.render();
 // related posts 
 const allPosts = await getCollection('publicaciones');
 const relatedPosts = getRelatedPosts(allPosts, post);
+
+const pageTitle = post.data.title;
+const pageDescription = post.data.description;
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
 
   <!-- ✅ Breadcrumbs SIN variables intermedias -->
   <Breadcrumbs
@@ -41,7 +44,7 @@ const relatedPosts = getRelatedPosts(allPosts, post);
     ]}
   />
 
-  <article class="container py-4" style="max-width: 800px">
+  <article class="py-4">
 
     <h1 class="mb-3">{post.data.title}</h1>
     <p class="text-muted">{post.data.description}</p>

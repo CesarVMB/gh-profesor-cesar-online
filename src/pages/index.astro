@@ -1,16 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LatestPosts from '../components/LatestPosts.astro';
+
+const pageTitle = 'Matemáticas, Física y Química';
+const pageDescription = 'Publicaciones educativas con apoyo visual y videos'
 ---
 
-<BaseLayout title="Inicio">
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <section class="mb-5 text-center">
-    <h1 class="display-5">Matemáticas, Física y Química</h1>
-    <p class="lead">Publicaciones educativas con apoyo visual y videos</p>
+    <h1 class="display-5">{pageTitle}</h1>
+    <p class="lead">{pageDescription}</p>
   </section>
 
   <section>
-    <h2 class="mb-4">Últimas publicaciones</h2>
+    <h2 class="mb-4">Publicaciones recientes</h2>
     <LatestPosts />
   </section>
 </BaseLayout>
