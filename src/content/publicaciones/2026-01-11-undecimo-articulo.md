@@ -1,7 +1,7 @@
 ---
 title: "Undécimo artículo"
 description: "Descripción del undécimo artículo."
-pubDate: 2026-01-11
+pubDate: "2026-01-11"
 category: matematicas
 tags: [calculo, bachillerato]
 youtube: https://www.youtube.com/watch?v=pYVVPqphPS0

@@ -4,7 +4,7 @@ const publicaciones = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.date(),
+    pubDate: z.string(),
     category: z.enum(["matematicas", "fisica", "quimica"]),
     tags: z.array(z.string()).optional(),
 

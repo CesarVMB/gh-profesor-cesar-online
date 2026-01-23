@@ -5,6 +5,7 @@ import PostsList from '../../../components/PostsList.astro';
 
 import { getCollection } from 'astro:content';
 import { categories } from '../../../data/categories';
+import { sortPostsByDate } from '../../../utils/sortPostsByDate';
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection('publicaciones');
@@ -12,13 +13,9 @@ export async function getStaticPaths({ paginate }) {
 
   return categorias.flatMap(categoria =>
     paginate(
-      posts
-        .filter(p => p.data.category === categoria)
-        .sort(
-          (a, b) =>
-            new Date(b.data.pubDate).getTime() -
-            new Date(a.data.pubDate).getTime()
-        ),
+      sortPostsByDate(
+        posts.filter(p => p.data.category === categoria)
+      ),
       {
         params: { categoria },
         pageSize: 6,

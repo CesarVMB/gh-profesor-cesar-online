@@ -1,6 +1,7 @@
 ---
 import { getPostImage } from '../utils/getPostImage';
 import { categoryLabels } from '../utils/categories';
+import { formatDate } from '../utils/formatDate.ts';
 
 const { post } = Astro.props;
 
@@ -12,11 +13,7 @@ const categoryUrl = `/categoria/${post.data.category}/1`;
 const imageSrc = getPostImage(post);
 
 // Fecha formateada
-const formattedDate = post.data.pubDate.toLocaleDateString('es-PE', {
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric',
-});
+const formattedDate = formatDate(post.data.pubDate);
 ---
 <div class="card h-100 shadow-sm post-card">
 

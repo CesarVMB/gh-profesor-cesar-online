@@ -1,10 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import PostsList from './PostsList.astro';
+import { sortPostsByDate } from '../utils/sortPostsByDate.ts';
 
-const posts = (await getCollection('publicaciones'))
-  .sort((a, b) => b.data.pubDate - a.data.pubDate)
-  .slice(0, 3);
+const posts = sortPostsByDate(
+  await getCollection('publicaciones')
+).slice(0, 3);
 ---
 
 <PostsList posts={posts} />
