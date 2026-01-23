@@ -1,16 +1,27 @@
----
-import menu from '../data/mainmenu.json';
----
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+--- 
+import mainmenu from '../data/mainmenu.json';
+import Menu from '../components/Menu.astro';
+
+//const items = mainmenu.items;
+
+const listClass="navbar-nav ms-auto navigation__list";
+const itemClass="nav-item navigation__item";
+const linkClass="nav-link navigation__link";
+--- 
+
+<nav class="navbar navbar-expand-lg bg-dark sticky-top navigation" data-bs-theme="dark">
   <div class="container">
-    <a class="navbar-brand" href="/">Profesor César Online</a>
-    <ul class="navbar-nav ms-auto">
-      {menu.map(item => (
-      <li class="nav-item">
-        <a class="nav-link" href={item.url}>{item.label}</a>
-      </li>
-      ))}
-    </ul>
+    <a class="navbar-brand d-block" href="#">Profesor César Online</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <Menu 
+        items={mainmenu} 
+        listClass={listClass}
+        itemClass={itemClass}
+        linkClass={linkClass}
+      />
+    </div>
   </div>
 </nav>
-

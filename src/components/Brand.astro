@@ -1,0 +1,33 @@
+--- 
+import { SITE } from '../data/consts.ts'
+import Logo from '../components/Logo.astro'
+--- 
+
+<div class="row brand">
+  <div class="col-3 brand__logo">
+    <Logo />
+  </div>
+  <div class="col-9 brand__company">
+    <div class="brand__title">{SITE.title}</div>
+    <div class="brand__slogan"><small>{SITE.slogan}</small></div>
+  </div>
+</div>
+
+<style>
+.brand {
+  display: flex;
+  align-items: center;
+}
+.brand__logo {
+  align-items: center;
+  display: flex;
+  height: 5rem;
+  justify-content: center;
+  width: 5rem;
+}
+.brand__company {
+  display: flex;
+  flex-direction: column;
+}
+  .brand__slogan {}
+</style>

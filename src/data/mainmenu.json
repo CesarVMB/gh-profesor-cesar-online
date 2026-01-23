@@ -1,7 +1,22 @@
 [
-  { "label": "Inicio", "url": "/" },
-  { "label": "Matemáticas", "url": "/categoria/matematicas/1" },
-  { "label": "Física", "url": "/categoria/fisica/1" },
-  { "label": "Química", "url": "/categoria/quimica/1" },
-  { "label": "Contacto", "url": "/contacto/" }
+  {
+    "label": "Inicio",
+    "url": "/"
+  },
+  {
+    "label": "Matemáticas",
+    "url": "/categoria/matematicas/1"
+  },
+  {
+    "label": "Física",
+    "url": "/categoria/fisica/1"
+  },
+  {
+    "label": "Química",
+    "url": "/categoria/quimica/1"
+  },
+  {
+    "label": "Contacto",
+    "url": "/contacto/"
+  }
 ]

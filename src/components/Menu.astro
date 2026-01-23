@@ -1,0 +1,35 @@
+--- 
+interface Props {
+  items: {
+    label: string
+    url: string 
+  }[],
+  listClass: string
+  itemClass: string
+  linkClass: string
+}
+
+const { items } = Astro.props
+const { listClass, itemClass, linkClass } = Astro.props
+--- 
+
+<ul class={listClass}>
+  {items.map(item => (
+  item.children ? (
+  <li class=`${itemClass} dropdown`>
+    <a class=`${linkClass} dropdown-toggle` href={item.url} role="button" data-bs-toggle="dropdown">{item.label}</a>
+    <ul class="dropdown-menu">
+    {item.children.map(subitem => (
+      <li>
+        <a class="dropdown-item" href={subitem.url}>{subitem.label}</a>
+      </li>
+    ))}
+    </ul>
+  </li>
+  ) : (
+  <li class={itemClass}>
+    <a class={linkClass} href={item.url}>{item.label}</a>
+  </li>
+  )
+  ))}
+</ul>
