@@ -1,4 +1,4 @@
-export function getRelatedPosts(allPosts: any[], currentPost: any, limit = 3) {
+export function getRelatedPosts(allPosts: any[], currentPost: any, limit = 2) {
   return allPosts
     .filter((post) => post.slug !== currentPost.slug)
     .filter(

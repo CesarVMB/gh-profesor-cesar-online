@@ -6,11 +6,11 @@ const { posts } = Astro.props;
 
 {posts.length > 0 && (
   <section class="mt-5">
-    <h3 class="mb-4">Posts relacionados</h3>
+    <h2 class="mb-4">Publicaciones relacionadas</h2>
 
     <div class="row g-4">
       {posts.map(post => (
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-6">
           <PostCard post={post} />
         </div>
       ))}
