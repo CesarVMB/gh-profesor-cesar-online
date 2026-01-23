@@ -9,6 +9,7 @@ import { getCollection } from 'astro:content';
 import { getPostImage } from '../../utils/getPostImage';
 import { getYouTubeId } from '../../utils/youtube';
 import { getRelatedPosts } from '../../utils/getRelatedPosts';
+import { formatDate } from '../../utils/formatDate';
 
 export async function getStaticPaths() {
   const posts = await getCollection('publicaciones');
@@ -50,11 +51,7 @@ const pageDescription = post.data.description;
     <h1 class="mb-3">{post.data.title}</h1>
     <p class="text-muted">{post.data.description}</p>
     <p class="text-muted mb-4">
-      {post.data.pubDate.toLocaleDateString('es-ES', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })}
+      {formatDate(post.data.pubDate)}
     </p>
 
     {youtubeId ? (
