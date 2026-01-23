@@ -1,8 +1,72 @@
+// Basic
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+// BaseLayout.astro layout
+
 .body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
+// Brand.astro component
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+.brand__logo {
+  align-items: center;
+  display: flex;
+  height: 5rem;
+  justify-content: center;
+  width: 5rem;
+}
+.brand__company {
+  display: flex;
+  flex-direction: column;
+}
+.brand__slogan {
+}
+
+// PostCard.astro component
+
+.post-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.card-img-top {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+// AutoSignature.astro component
+
+.signature {
+  align-items: center;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1rem;
+}
+.signature__image {
+  max-width: 100%;
+}
+.signature__image {
+  filter: grayscale(1);
+}
+
+// Footer.astro component
 
 #footer {
   margin-top: auto;
