@@ -7,7 +7,7 @@ const videoId = getYouTubeId(id);
 
 {videoId && (
   <div class="ratio ratio-16x9">
-    <iframe
+    <iframe class="rounded"
       src={`https://www.youtube.com/embed/${videoId}`}
       title="YouTube video"
       loading="lazy"

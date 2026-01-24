@@ -1,5 +1,6 @@
 // Basic
-img {
+img,
+iframe {
   max-width: 100%;
   width: 100%;
 }
@@ -15,21 +16,20 @@ img {
 // Brand.astro component
 
 .brand {
-  display: flex;
   align-items: center;
+  display: flex;
+  gap: 1rem;
 }
 .brand__logo {
   align-items: center;
   display: flex;
-  height: 5rem;
+  height: 3rem;
   justify-content: center;
-  width: 5rem;
+  width: 3rem;
 }
-.brand__company {
+.brand__sitename {
   display: flex;
   flex-direction: column;
-}
-.brand__slogan {
 }
 
 // PostCard.astro component

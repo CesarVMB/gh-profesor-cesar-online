@@ -3,11 +3,16 @@ const SITE = {
   title: "Profesor César Online",
   description:
     "Clases de matemáticas, física y química 100 % online. Dirigidas a estudiantes de 3º, 4º y 5º de secundaria y Bachillerato Internacional (IB).",
-  slogan: "Matemáticas, física y química",
+  logo: "/images/logo.png",
+  favicon: "/favicon.svg",
 };
 
 const COPYRIGHT = {
-  owner: "César Vargas-Machuca",
+  ownerName: "César Vargas-Machuca",
+  ownerInfo:
+    "Apasionado por el aprendizaje y la docencia. Lector frecuente, melómano exigente, cocinero aficionado, amigo de los animales. Excesivamente puntual. Detesto el spam.",
+  ownerAvatar: "/images/profile.png",
+  ownerQuote: "Lo que bien se aprende nunca se olvida.",
   notice: "Todos los derechos reservados",
 };
 

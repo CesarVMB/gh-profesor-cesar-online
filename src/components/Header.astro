@@ -1,17 +1,6 @@
 --- 
-import Brand from '../components/Brand.astro'
-import WhatsApp from '../components/WhatsApp.astro'
+import Navigation from '../components/Navigation.astro';
 --- 
-
-<div id="header">
-  <div class="container">
-    <header class="row header">
-      <div class="col-md-6 header__brand">
-        <Brand />
-      </div>
-      <div class="d-none d-md-block col-md-6 header__phone">
-        <WhatsApp />
-      </div>
-    </header>
-  </div>
+<div id="header" class="sticky-top header">
+  <Navigation />
 </div>

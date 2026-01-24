@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import YouTubeVideo from '../../components/YouTubeVideo.astro';
-import AuthorSignature from '../../components/AuthorSignature.astro';
+import OwnerSignature from '../../components/OwnerSignature.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
 
 import { getCollection } from 'astro:content';
@@ -59,7 +59,7 @@ const pageDescription = post.data.description;
     ) : (
       <img
         src={imageSrc}
-        class="img-fluid mb-4 youtube__image"
+        class="img-fluid mb-4 rounded youtube__image"
         alt={post.data.title}
         loading="lazy"
       />
@@ -67,7 +67,7 @@ const pageDescription = post.data.description;
 
     <div class="col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
       <Content />
-      <AuthorSignature />
+      <OwnerSignature />
       <RelatedPosts posts={relatedPosts} />
     </div>
 

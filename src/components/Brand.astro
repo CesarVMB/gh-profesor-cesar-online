@@ -3,13 +3,12 @@ import { SITE } from '../data/consts.ts'
 import Logo from '../components/Logo.astro'
 --- 
 
-<div class="row brand">
-  <div class="col-3 brand__logo">
+<div class="brand">
+  <div class="brand__logo">
     <Logo />
   </div>
-  <div class="col-9 brand__company">
-    <div class="brand__title">{SITE.title}</div>
-    <div class="brand__slogan"><small>{SITE.slogan}</small></div>
+  <div class="brand__sitename">
+    {SITE.title}
   </div>
 </div>
 

@@ -1,0 +1,22 @@
+--- 
+import { COPYRIGHT } from '../data/consts.ts';
+--- 
+
+<div class="row rounded signature">
+  <div class="col-xs-12 text-center text-sm-start col-sm-4 col-md-3 col-lg-3 col-xl-2">
+    <img 
+      class="rounded-circle signature__image" 
+      src="/images/profile.png" 
+      alt={COPYRIGHT.ownerName}
+    >
+  </div>
+  <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 col-xl-10">
+    <div class="h5 text-center text-sm-start signature__name">
+      {COPYRIGHT.ownerName}
+    </div>
+    <div class="small text-center text-sm-start signature__info">
+      {COPYRIGHT.ownerInfo}
+    </div>
+  </div>
+</div>
+

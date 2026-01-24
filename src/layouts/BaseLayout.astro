@@ -4,7 +4,6 @@ import { SITE } from '../data/consts'
 
 import Head from '../components/Head.astro'
 import Header from '../components/Header.astro'
-import Navigation from '../components/Navigation.astro'
 import Footer from '../components/Footer.astro'
 import Copyright from '../components/Copyright.astro'
 
@@ -22,9 +21,7 @@ const { pageTitle, pageDescription } = Astro.props
   />
   <body class="body">
     <!-- HEADER -->
-    <!--<Header />-->
-    <!-- NAVIGATION -->
-    <Navigation />
+    <Header />
     <!-- MAIN -->
     <div id="main" class="my-4">
       <div class="container">

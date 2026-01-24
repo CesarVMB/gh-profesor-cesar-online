@@ -1,15 +1,19 @@
 --- 
-import mainmenu from '../data/mainmenu.json';
 import Menu from '../components/Menu.astro';
+import Brand from '../components/Brand.astro';
+
+import mainmenu from '../data/mainmenu.json';
 
 const listClass="navbar-nav ms-auto navigation__list";
 const itemClass="nav-item navigation__item";
 const linkClass="nav-link navigation__link";
 --- 
 
-<nav class="navbar navbar-expand-lg bg-dark sticky-top navigation" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark navigation" data-bs-theme="dark">
   <div class="container">
-    <a class="navbar-brand d-block" href="/">Profesor César Online</a>
+    <a class="navbar-brand d-block" href="/">
+      <Brand />
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

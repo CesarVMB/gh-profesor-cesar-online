@@ -1,7 +1,4 @@
 --- 
-//import { Image } from 'astro:assets';
-//import logo from '../assets/logo.png';
+import { SITE } from '../data/consts.ts';
 --- 
-
-<!--<Image src={logo} alt={altContent} width={180} format="webp" />-->
-<img src="/logo.png" alt="Logo." width={72}>
+<img src={SITE.logo} alt=`Logo de ${SITE.title}`>
