@@ -19,7 +19,7 @@ const { pageTitle, pageDescription } = Astro.props
     pageTitle={pageTitle}
     pageDescription={pageDescription}
   />
-  <body class="body">
+  <body class="body" data-category={Astro.props.category ?? ''}>
     <!-- HEADER -->
     <Header />
     <!-- MAIN -->

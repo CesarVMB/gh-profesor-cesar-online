@@ -34,7 +34,7 @@ const pageTitle = categoriaTitulo;
 const pageDescription = `Esta es la descripción de la página de ${categoriaTitulo}.`
 ---
 
-<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription} category={categoria}>
   <Breadcrumbs />
   <h1 class="mb-4">{pageTitle}</h1>
   <PostsList page={page} />
