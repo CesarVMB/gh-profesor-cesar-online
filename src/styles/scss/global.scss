@@ -66,6 +66,15 @@ iframe {
   filter: grayscale(1);
 }
 
+// Tikz
+.tikz {
+  display: block;
+  height: auto;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  width: 50%;
+}
+
 // Footer.astro component
 
 #footer {

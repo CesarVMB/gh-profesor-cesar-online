@@ -41,4 +41,8 @@ x(t) &= x_0 + v_0 t + \frac{1}{2}a t^2\\
 \end{align*}
 $$
 
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam commodi delectus aperiam. Sint blanditiis laboriosam quidem error aspernatur delectus illum, aliquid reiciendis laborum tempore alias nisi, enim architecto officia facere?
+
+<img class="tikz" src="/images/tikz/tikz-example.svg" alt="Gráfico con TikZ"/>
+
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo quia dolorum labore. Porro, cum iusto hic, est suscipit fuga ratione, natus saepe doloremque pariatur cumque quis? Blanditiis, accusantium fugiat!
