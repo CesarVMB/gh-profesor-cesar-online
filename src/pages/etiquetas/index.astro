@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+import { getCollection } from 'astro:content';
+
+// Obtener todos los posts
+const posts = await getCollection('publicaciones');
+
+// Extraer todas las etiquetas
+const tagsMap = new Map<string, number>();
+
+posts.forEach(post => {
+  post.data.tags?.forEach(tag => {
+    tagsMap.set(tag, (tagsMap.get(tag) ?? 0) + 1);
+  });
+});
+
+// Convertir a array ordenado alfabéticamente
+const tags = [...tagsMap.entries()]
+  .sort((a, b) => a[0].localeCompare(b[0]));
+---
+
+<BaseLayout pageTitle="Etiquetas">
+
+  <Breadcrumbs extraItems={[{ label: 'Etiquetas' }]} />
+
+  <h1 class="mb-4">Etiquetas</h1>
+
+  {tags.length === 0 ? (
+    <p>No hay etiquetas disponibles.</p>
+  ) : (
+    <div class="row">
+      {tags.map(([tag, count]) => (
+        <div class="col-6 col-md-4 col-lg-3 mb-3">
+          <a
+            href={`/etiquetas/${tag}/1`}
+            class="d-flex justify-content-between align-items-center
+                   border rounded px-3 py-2 text-decoration-none"
+          >
+            <span>#{tag}</span>
+            <span class="badge bg-secondary">{count}</span>
+          </a>
+        </div>
+      ))}
+    </div>
+  )}
+
+</BaseLayout>
+

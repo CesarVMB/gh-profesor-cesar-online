@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import PostsList from '../../../components/PostsList.astro';
+
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection('publicaciones');
+
+  // 🔹 Obtener todas las etiquetas únicas
+  const tags = Array.from(
+    new Set(
+      posts.flatMap(post => post.data.tags ?? [])
+    )
+  );
+
+  // 🔹 Crear páginas paginadas por etiqueta
+  return tags.flatMap(tag =>
+    paginate(
+      posts
+        // filtrar por etiqueta
+        .filter(post => post.data.tags?.includes(tag))
+        // ✅ ORDEN CORRECTO: más recientes primero
+        .sort(
+          (a, b) =>
+            new Date(b.data.pubDate).getTime() -
+            new Date(a.data.pubDate).getTime()
+        ),
+      {
+        params: { tag },
+        pageSize: 6,
+      }
+    )
+  );
+}
+
+// --------------------
+// Props y params
+// --------------------
+const { tag } = Astro.params;
+const { page } = Astro.props;
+
+// TOTAL REAL de artículos (no solo de la página)
+const totalArticles = page.total;
+
+// pluralización simple en español
+const articleLabel = totalArticles === 1 ? 'artículo' : 'artículos';
+
+// --------------------
+// SEO
+// --------------------
+const pageTitle = `Etiqueta: ${tag} (${totalArticles} ${articleLabel})`;
+const pageDescription = `Publicaciones etiquetadas con ${tag}`;
+---
+
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+
+  <Breadcrumbs
+    extraItems={[
+      { label: 'Etiquetas', url: '/etiquetas/' },
+      { label: tag },
+    ]}
+  />
+
+  <h1 class="mb-4">
+    <span>{pageTitle}</span>
+  </h1>
+
+  <PostsList page={page} />
+
+</BaseLayout>
+

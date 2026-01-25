@@ -4,6 +4,7 @@ import menu from '../data/mainmenu.json';
 const {
   extraItems = [],
   categorySlug = null, // 👈 NUEVO
+  tag = null,            // 👈 NUEVO (para etiquetas)
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
@@ -22,12 +23,20 @@ if (categorySlug) {
   if (categoryItem) {
     breadcrumbs.push(categoryItem);
   }
-} else {
-  // 2️⃣ Coincidencia automática (contacto, servicios, categorías)
+}
+// 2️⃣ Etiquetas
+else if (tag) {
+  breadcrumbs.push(
+    { label: 'Etiquetas', url: '/etiquetas/1' },
+    { label: tag }
+  );
+} 
+// 2️⃣ Coincidencia automática (contacto, servicios, categorías)
+else {
   const matched = menu.find(
     item =>
       item.url !== '/' &&
-      pathname.startsWith(item.url.replace(/\/\d+$/, ''))
+      pathname === item.url
   );
 
   if (matched) breadcrumbs.push(matched);

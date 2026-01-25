@@ -36,7 +36,7 @@ const pageTitle = post.data.title;
 const pageDescription = post.data.description;
 ---
 
-<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription} category={post.data.category}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
 
   <!-- ✅ Breadcrumbs SIN variables intermedias -->
   <Breadcrumbs
@@ -54,6 +54,22 @@ const pageDescription = post.data.description;
       {formatDate(post.data.pubDate)}
     </p>
 
+    <!-- 🏷️ ETIQUETAS DEL POST -->
+    {post.data.tags && post.data.tags.length > 0 && (
+      <div class="mb-4">
+        {post.data.tags.map(tag => (
+          <a
+            href={`/etiquetas/${tag}/1`}
+            class="badge bg-light text-dark border me-2 text-decoration-none"
+            aria-label={`Ver artículos con la etiqueta ${tag}`}
+          >
+            #{tag}
+          </a>
+        ))}
+      </div>
+    )}
+
+    <!--Video de YouTube-->
     {youtubeId ? (
       <YouTubeVideo id={post.data.youtube} />
     ) : (
