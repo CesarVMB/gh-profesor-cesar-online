@@ -36,7 +36,11 @@ const pageTitle = post.data.title;
 const pageDescription = post.data.description;
 ---
 
-<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
+<BaseLayout 
+  pageTitle={pageTitle} 
+  pageDescription={pageDescription}
+  category={post.data.category}
+>
 
   <!-- ✅ Breadcrumbs SIN variables intermedias -->
   <Breadcrumbs
