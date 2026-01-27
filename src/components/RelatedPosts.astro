@@ -6,7 +6,7 @@ const { posts } = Astro.props;
 
 {posts.length > 0 && (
 
-<div id="related">
+<div id="related" class="related">
   <div class="container">
     <div class="row">
       <section class="mt-5">
@@ -25,9 +25,3 @@ const { posts } = Astro.props;
 
 )}
 
-<style>
-#related {
-  background-color: lightgray;
-  padding-bottom: 2rem;
-}
-</style>
