@@ -12,7 +12,7 @@ const COPYRIGHT = {
   ownerInfo:
     "Apasionado por el aprendizaje y la docencia. Lector frecuente, melómano exigente, cocinero aficionado, amigo de los animales. Excesivamente puntual. Detesto el spam.",
   ownerAvatar: "/images/profile.png",
-  ownerQuote: "Lo que bien se aprende nunca se olvida.",
+  ownerQuote: "¡Cuestiona, investiga y aplica lo aprendido!",
   notice: "Todos los derechos reservados",
 };
 

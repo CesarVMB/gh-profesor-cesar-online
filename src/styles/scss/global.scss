@@ -48,6 +48,11 @@ iframe {
   object-fit: cover;
 }
 
+// Farewell component
+.farewell {
+  font-style: italic;
+}
+
 // AutoSignature.astro component
 
 .signature {
@@ -57,7 +62,7 @@ iframe {
   justify-content: center;
   margin-left: 0;
   margin-right: 0;
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding: 1rem;
   &__image {
     max-width: 100%;
