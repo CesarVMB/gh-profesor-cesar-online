@@ -5,16 +5,29 @@ const { posts } = Astro.props;
 ---
 
 {posts.length > 0 && (
-  <section class="mt-5">
-    <h2 class="mb-4">Publicaciones relacionadas</h2>
 
-    <div class="row g-4">
-      {posts.map(post => (
-        <div class="col-md-6 col-lg-6">
-          <PostCard post={post} />
+<div id="related">
+  <div class="container">
+    <div class="row">
+      <section class="mt-5">
+        <h2 class="mb-4">Publicaciones relacionadas</h2>
+        <div class="row g-4">
+          {posts.map(post => (
+          <div class="col-md-6 col-lg-3">
+            <PostCard post={post} />
+          </div>
+          ))}
         </div>
-      ))}
+      </section>
     </div>
-  </section>
+  </div>
+</div>
+
 )}
 
+<style>
+#related {
+  background-color: lightgray;
+  padding-bottom: 2rem;
+}
+</style>

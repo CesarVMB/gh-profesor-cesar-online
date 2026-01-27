@@ -88,10 +88,13 @@ const pageDescription = post.data.description;
     <div class="col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
       <Content />
       <OwnerSignature />
-      <RelatedPosts posts={relatedPosts} />
     </div>
 
   </article>
+
+  <div slot="related">
+    <RelatedPosts posts={relatedPosts} />
+  </div>
 
 </BaseLayout>
 
