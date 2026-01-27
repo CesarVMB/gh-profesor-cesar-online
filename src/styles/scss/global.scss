@@ -50,7 +50,9 @@ iframe {
 
 // Farewell component
 .farewell {
+  border-left: lightgray solid 4px;
   font-style: italic;
+  padding-left: 1rem;
 }
 
 // AutoSignature.astro component
