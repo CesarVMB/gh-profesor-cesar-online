@@ -15,9 +15,9 @@ $$
 Todo número complejo puede puede representarse como la suma de sus componentes real e imaginaria (descomposición canónica). En general, dado el número complejo $z=(a,b)$:
 
 $$
-\begin{equation}
+\begin{equation*}
  z=(a,b)=\underbrace{(a,0)}_{\text{componente real}}+\underbrace{(0,b)}_{\text{componente imaginaria}}
-\end{equation}
+\end{equation*}
 $$
 
 En la figura se muestra la gráfica de la descomposición canónica de un complejo.
