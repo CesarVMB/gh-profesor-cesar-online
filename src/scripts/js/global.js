@@ -31,6 +31,23 @@ document.querySelectorAll(".dropdown-menu > li > a").forEach((link) => {
   }
 });
 
+// TABLES
+
+document.querySelectorAll("table").forEach((cell) => {
+  cell.classList.add("table");
+  //cell.classList.add("table-dark");
+  cell.classList.add("table-striped");
+  //cell.classList.add("table-hover");
+});
+
+document.querySelectorAll("thead>tr>th").forEach((cell) => {
+  cell.setAattribute("scope", "col");
+});
+
+document.querySelectorAll("tbody>tr>th").forEach((cell) => {
+  cell.setAattribute("scope", "row");
+});
+
 // SHOW THE CURRENT YEAR
 
 let jCurrentYear = document.getElementById("jCurrentYear");
