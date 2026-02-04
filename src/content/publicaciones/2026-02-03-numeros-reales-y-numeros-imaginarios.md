@@ -27,6 +27,7 @@ $$
 $$
 
 En la figura se muestra la gráfica de un número imaginario en el plano complejo.
+
 <img
   class="tikz"
   src="/images/tikz/numero-imaginario-en-el-plano-complejo.svg"
