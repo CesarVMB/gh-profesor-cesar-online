@@ -19,3 +19,21 @@ En la figura se muestra la gráfica de la suma de dos números complejos (métod
   src="/images/tikz/suma-de-dos-numeros-complejos.svg"
   alt="Suma de dos números complejos."
 />
+
+<div class="rounded exercise">
+
+**Ejercicio.** Dados los números complejos:
+
+- $ z_1 = (4,0) $.
+- $ z_2 = (-5,12) $.
+- $ z_3 = (0,-24) $.
+- $ z_4 = (0,0) $.
+
+Calcular:
+
+- $z_1 + z_2$.
+- $z_2 + z_3$.
+- $z_1 + z_2 + z_3$.
+- $z_2 + z_4$.
+
+</div>

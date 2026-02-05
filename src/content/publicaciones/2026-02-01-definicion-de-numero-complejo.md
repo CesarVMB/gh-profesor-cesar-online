@@ -24,14 +24,21 @@ Todo número complejo puede representarse gráficamente como un punto del plano 
 
 <img
   class="tikz"
-  src="/images/tikz/definicion-de-un-numero-complejo.svg"
-  alt="Definición de un número complejo"
+  src="/images/tikz/definicion-de-numero-complejo.svg"
+  alt="Definición de número complejo"
 />
 
 El plano complejo está formado por dos ejes perpendiculares entre sí: el **eje real** (horizontal) y el **eje imaginario** (vertical). El origen de coordenadas $(0,0)$ es el punto de intersección de ambos ejes.
 
-## Notas relacionadas
+<div class="rounded exercise">
 
-- [Números complejos: Índice](/publicaciones/2026-01-31-numeros-complejos-indice)
-- [Módulo de un número complejo](/publicaciones/2026-02-02-modulo-de-un-numero-complejo)
-- [Números reales y números imaginarios](/publicaciones/2026-02-03-numeros-reales-y-numeros-imaginarios)
+**Ejercicio.** Dados los números complejos:
+
+- $ z_1 = (4,3) $.
+- $ z_2 = (-5,12) $.
+- $ z_3 = (-7,-24) $.
+- $ z_4 = (3,-4) $.
+
+Escribir la parte real, la parte imaginaria y la gráfica de cada uno en el plano complejo.
+
+</div>

@@ -52,10 +52,11 @@ iframe {
 .farewell {
   border-left: lightgray solid 4px;
   font-style: italic;
+  margin-top: 2rem;
   padding-left: 1rem;
 }
 
-// AutoSignature.astro component
+// AuthorSignature.astro component
 
 .signature {
   align-items: center;
@@ -86,6 +87,13 @@ iframe {
 .related {
   background-color: lightgray;
   padding-bottom: 3rem;
+}
+
+// Excercise
+.exercise {
+  background-color: lightgray;
+  border-left: lightgray solid 4px;
+  padding: 1rem;
 }
 
 // Footer.astro component

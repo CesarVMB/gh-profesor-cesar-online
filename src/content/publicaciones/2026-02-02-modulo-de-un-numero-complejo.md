@@ -25,8 +25,15 @@ $$
 ||z||=\sqrt{a²+b²}
 $$
 
-## Notas relacionadas
+<div class="rounded exercise">
 
-- [Números complejos: Índice](/publicaciones/2026-01-31-numeros-complejos-indice)
-- [Definición de número complejo](/publicaciones/2026-02-01-definicion-de-numero-complejo)
-- [Números reales y números imaginarios](/publicaciones/2026-02-03-numeros-reales-y-numeros-imaginarios)
+**Ejercicio.** Dados los números complejos:
+
+- $ z_1 = (4,3) $.
+- $ z_2 = (-5,12) $.
+- $ z_3 = (-7,-24) $.
+- $ z_4 = (3,-4) $.
+
+Calcular el módulo de cada uno.
+
+</div>

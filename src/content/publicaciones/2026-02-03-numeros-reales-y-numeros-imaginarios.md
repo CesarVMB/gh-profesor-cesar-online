@@ -34,8 +34,19 @@ En la figura se muestra la gráfica de un número imaginario en el plano complej
   alt="Número imaginario en el plano complejo"
 />
 
-## Notas relacionadas
+<div class="rounded exercise">
 
-- [Números complejos: Índice](/publicaciones/2026-01-31-numeros-complejos-indice)
-- [Definición de número complejo](/publicaciones/2026-02-01-definicion-de-numero-complejo)
-- [Módulo de un número complejo](/publicaciones/2026-02-02-modulo-de-un-numero-complejo)
+**Ejercicio.** Dados los números complejos:
+
+- $ z_1 = (4,0) $.
+- $ z_2 = (-5,12) $.
+- $ z_3 = (0,-24) $.
+- $ z_4 = (-5,0) $.
+- $ z_5 = (0,-5) $.
+- $ z_6 = (12,5) $.
+- $ z_7 = (0,1) $.
+- $ z_8 = (0,0) $.
+
+Determinar cuáles son números reales y cuáles son números imaginarios.
+
+</div>
