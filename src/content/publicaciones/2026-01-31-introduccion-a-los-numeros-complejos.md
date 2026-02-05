@@ -1,14 +1,18 @@
 ---
-title: "Números complejos: Índice"
+title: "Introducción a los números complejos"
 description: ""
 pubDate: "2026-01-31"
 category: matematicas
 tags: [algebra, secundaria]
 ---
 
-## Índice
+Los números reales permiten describir una gran cantidad de situaciones matemáticas y físicas, pero no siempre son suficientes. Al estudiar ciertas ecuaciones algebraicas, aparecen expresiones que no admiten solución dentro de este conjunto. Un ejemplo clásico es la ecuación $x^2 + 1 = 0$, que no puede resolverse usando únicamente números reales.
 
-### Fundamentos
+Para superar esta limitación se introducen los **números complejos**, un sistema numérico que amplía a los reales e incorpora la **unidad imaginaria $i$**, definida por la propiedad $i^2 = −1$. Gracias a esta extensión, es posible dar sentido algebraico a expresiones que antes no podían interpretarse.
+
+En esta serie de notas se desarrollan los fundamentos de los números complejos, sus operaciones, propiedades y distintas formas de representación, con el objetivo de construir una comprensión clara y progresiva del tema.
+
+## Fundamentos
 
 - [Definición de número complejo](/publicaciones/2026-02-01-definicion-de-numero-complejo)
   - [Módulo de un número complejo](/publicaciones/2026-02-02-modulo-de-un-numero-complejo)
@@ -28,14 +32,14 @@ tags: [algebra, secundaria]
   - [Definición del cociente de dos números complejos](/publicaciones/2026-02-16-definicion-del-cociente-de-dos-numeros-complejos)
 - [Descomposición canónica de un número complejo](/publicaciones/2026-02-17-descomposicion-canonica-de-un-numero-complejo)
 
-### El famoso número $i$
+## El famoso número $i$
 
 - [La unidad imaginaria $i$](/publicaciones/2026-02-18-la-unidad-imaginaria-i)
 - [Producto de un número real por la unidad imaginaria $i$](/publicaciones/2026-02-19-producto-de-un-numero-real-por-la-unidad-imaginaria-i)
 - [El cuadrado del número $i$](/publicaciones/2026-02-20-el-cuadrado-del-numero-i)
 - [Definición del valor algebraico del número $i$](/publicaciones/2026-02-21-definicion-del-valor-algebraico-del-numero-i)
 
-### Otras notaciones para números complejos
+## Otras notaciones para números complejos
 
 - [Notación binomial (o canónica)](/publicaciones/2026-02-22-notacion-binomial-o-canonica)
   - [El conjugado de un número complejo](/publicaciones/2026-02-23-el-conjugado-de-un-numero-complejo)
