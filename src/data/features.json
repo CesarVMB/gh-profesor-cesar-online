@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Qué es la químíca.",
+    "subtitle": "¿De qué se trata?",
+    "content": "La química es una ciencia experimental que estudia la composición, las propiedades y las transformaciones de la materia."
+  },
+  {
+    "title": "Qué es la materia.",
+    "subtitle": "¿Cómo se define?",
+    "content": "La materia puede definirse como cualquier cosa que tiene masa y ocupa un lugar en el espacio (tiene volumen)."
+  },
+  {
+    "title": "Qué es un cuerpo.",
+    "subtitle": "¿Cómo se reconoce?",
+    "content": "Una porción limitada de materia se denomina cuerpo y se caracteriza por su forma y tamaño."
+  },
+  {
+    "title": "Qué es la energía.",
+    "subtitle": "¿Qué genera?",
+    "content": "La energía es la capacidad que tiene un material para generar un cambio en alguna de sus propiedades."
+  }
+]

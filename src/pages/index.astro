@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Features from '../components/Features.astro';
 import LatestPosts from '../components/LatestPosts.astro';
 
 const pageTitle = 'Matemáticas, Física y Química';
@@ -13,6 +14,7 @@ const pageDescription = 'Publicaciones educativas con apoyo visual y videos'
   </section>
 
   <section>
+    <Features />
     <h2 class="mb-4">Publicaciones recientes</h2>
     <LatestPosts />
   </section>
