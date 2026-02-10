@@ -2,7 +2,7 @@ const SITE = {
   language: "es",
   title: "Profesor César Online",
   description:
-    "Clases de matemáticas, física y química 100 % online. Dirigidas a estudiantes de 3º, 4º y 5º de secundaria y Bachillerato Internacional (IB).",
+    "Clases de matemáticas, física y química 100 % online. Dirigidas a estudiantes de secundaria y Bachillerato Internacional.",
   logo: "/images/logo.png",
   favicon: "/favicon.svg",
 };

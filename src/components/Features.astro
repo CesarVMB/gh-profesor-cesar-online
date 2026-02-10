@@ -14,7 +14,7 @@ import features from '../data/features.json';
     <p class="lead">{item.content}</p> 
   </div> 
   <div class=`${index % 2 === 0 ? "col-md-5" : "col-md-5 order-md-1"}`> 
-    <img src="/images/default.png" alt="">
+    <img class="rounded" src="/images/default.png" alt="">
   </div> 
 </div>
 
@@ -22,3 +22,12 @@ import features from '../data/features.json';
 
 <hr class="featurette-divider">
 
+<style>
+.featurette {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+</style>
