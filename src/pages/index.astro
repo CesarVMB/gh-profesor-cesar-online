@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
 import LatestPosts from '../components/LatestPosts.astro';
 
@@ -8,10 +9,8 @@ const pageDescription = 'Publicaciones educativas con apoyo visual y videos'
 ---
 
 <BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
-  <!--<section class="mb-5 text-center">
-    <h1 class="display-5">{pageTitle}</h1>
-    <p class="lead">{pageDescription}</p>
-  </section>-->
+
+  <Hero /> 
 
   <section>
     <Features />
