@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.12",
+    "astro": "^5.17.2",
     "bootstrap": "^5.3.8",
     "katex": "^0.16.27",
     "node-addon-api": "^8.5.0",
