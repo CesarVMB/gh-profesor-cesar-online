@@ -2,32 +2,19 @@
 import features from '../data/features.json';
 --- 
 
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3"> 
 {features.map((item, index) => (
-
-<hr class="featurette-divider">
-
-<div class="row featurette"> 
-  <div class=`${index % 2 === 0 ? "col-md-7" : "col-md-7 order-md-2"}`> 
-    <h2 class="featurette-heading fw-normal lh-1">
-      {item.title}&nbsp;<span class="text-body-secondary">{item.subtitle}</span>
-    </h2> 
-    <p class="lead">{item.content}</p> 
+  <div class="feature col"> 
+    <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"> 
+      <svg class="bi" width="1em" height="1em" aria-hidden="true"><use xlink:href="#collection"></use></svg> 
+    </div> 
+    <h2 class="fs-2 text-body-emphasis">{item.title}</h2> 
+    <p>{item.content}</p> 
+    <a href="#" class="icon-link">
+      Call to action
+      <svg class="bi" aria-hidden="true">
+        <use xlink:href="#chevron-right"></use>
+      </svg> 
+    </a> 
   </div> 
-  <div class=`${index % 2 === 0 ? "col-md-5" : "col-md-5 order-md-1"}`> 
-    <img class="rounded" src="/images/default.png" alt="">
-  </div> 
-</div>
-
 ))}
-
-<hr class="featurette-divider">
-
-<style>
-.featurette {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-}
-</style>

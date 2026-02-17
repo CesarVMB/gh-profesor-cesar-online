@@ -1,0 +1,33 @@
+--- 
+import features from '../data/features.json';
+--- 
+
+{features.map((item, index) => (
+
+<hr class="featurette-divider">
+
+<div class="row featurette"> 
+  <div class=`${index % 2 === 0 ? "col-md-7" : "col-md-7 order-md-2"}`> 
+    <h2 class="featurette-heading fw-normal lh-1">
+      {item.title}&nbsp;<span class="text-body-secondary">{item.subtitle}</span>
+    </h2> 
+    <p class="lead">{item.content}</p> 
+  </div> 
+  <div class=`${index % 2 === 0 ? "col-md-5" : "col-md-5 order-md-1"}`> 
+    <img class="rounded" src="/images/default.png" alt="">
+  </div> 
+</div>
+
+))}
+
+<hr class="featurette-divider">
+
+<style>
+.featurette {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+</style>
