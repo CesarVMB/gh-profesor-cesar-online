@@ -14,4 +14,7 @@ export default defineConfig({
       entrypoint: "astro/assets/services/noop",
     },
   },
+  legacy: {
+    collectionsBackwardsCompat: true,
+  },
 });
